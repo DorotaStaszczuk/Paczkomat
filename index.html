@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-</body>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css"/>
+        <title>Envelo</title>
+    </head>
+    <body>
+        <main>
+            <h1>Envelo</h1>
+            <p>Możesz mieć swoją przesyłkę w kilkanaście sekund. <br>Rozpocznij klikając w przycisk.</p>
+            <form>
+                <div>
+                    <p><label for="phone">Numer telefonu:</label></p>
+                    <input required type="tel" id="phone" name="phone" pattern="[0-9]{3} [0-9]{3} [0-9]{3}">
+                </div>
+                <div>
+                    <p><label for="code">Kod odbioru:</label></p>
+                    <input required type="number" id="code" name="code">
+                </div>
+            </form>
+            <button type="button">Odbierz paczkę</button>
+        </main>
+        <script src="paczkomat.js"></script>
+    </body>
 </html>
