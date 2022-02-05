@@ -12,18 +12,28 @@
         <main>
             <h1>Envelo</h1>
             <p>Możesz mieć swoją przesyłkę w kilkanaście sekund. <br>Rozpocznij klikając w przycisk.</p>
-            <form>
+            <form class="none">
                 <div>
-                    <p><label for="phone">Numer telefonu:</label></p>
+                    <p><label for="phone">Numer telefonu</label></p>
                     <input required type="tel" id="phone" name="phone" pattern="[0-9]{3} [0-9]{3} [0-9]{3}">
                 </div>
-                <div>
-                    <p><label for="code">Kod odbioru:</label></p>
+                <div class="code">
+                    <p><label for="code">Kod odbioru</label></p>
                     <input required type="number" id="code" name="code">
                 </div>
             </form>
-            <button type="button">Odbierz paczkę</button>
+            <button type="button" class="main-button">Odbierz paczkę</button>
         </main>
+        <div class="modal none">
+            <div class="modal-container">
+                <p class="modal-statement">Paczka odebrana!</p>
+                <p>Zrobiłeś to w czasie 10 sekund! <br>Czy możemy zrobić dla Ciebie coś jeszcze?</p>
+                <div class="buttons">
+                    <button type="button" class="end">To wszystko na dziś</button>
+                    <button type="button" class="package">Odbierz kolejną paczkę</button>
+                </div>
+            </div>
+        </div>
         <script src="paczkomat.js"></script>
     </body>
 </html>
