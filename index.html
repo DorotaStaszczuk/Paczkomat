@@ -13,14 +13,17 @@
             <h1>Envelo</h1>
             <p>Możesz mieć swoją przesyłkę w kilkanaście sekund. <br>Rozpocznij klikając w przycisk.</p>
             <form class="none">
-                <div>
-                    <p><label for="phone">Numer telefonu</label></p>
-                    <input required type="tel" id="phone" name="phone" pattern="[0-9]{3} [0-9]{3} [0-9]{3}">
+                <div class="inputs">
+                    <div>
+                        <p><label for="phone">Numer telefonu</label></p>
+                        <input required type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="code">
+                        <p><label for="code">Kod odbioru</label></p>
+                        <input required type="number" id="code" name="code">
+                    </div>
                 </div>
-                <div class="code">
-                    <p><label for="code">Kod odbioru</label></p>
-                    <input required type="number" id="code" name="code">
-                </div>
+                <button type="submit" class="submit-button" disabled>Odbierz paczkę</button>
             </form>
             <button type="button" class="main-button">Odbierz paczkę</button>
         </main>
