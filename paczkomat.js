@@ -1,11 +1,11 @@
 const modal = document.querySelector(".modal");
 const mainBtn = document.querySelector(".main-button");
 const form = document.querySelector("form");
+const submitBtn = document.querySelector(".submit-button");
 
 mainBtn.addEventListener("click", function (){
-    (mainBtn.classList.contains('clicked-once') && modal.classList.contains('none')) && modal.classList.remove('none');
     form.classList.contains('none') && form.classList.remove('none');
-    !form.classList.contains('none') && mainBtn.classList.add('clicked-once');
+    mainBtn.classList.add('none');
 });
 
 const endBtn = document.querySelector(".end");
