@@ -51,13 +51,19 @@ p {
     font-size: 22px;
 }
 
-form {
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs {
     display: flex;
     flex-direction: row;
     padding-bottom: 30px;
 }
 
-form p {
+.form p {
     text-align: left;
     padding: 30px 0 10px 0;
 }
@@ -67,6 +73,12 @@ input {
     height: 50px;
     outline: none;
     font-size: 30px;
+    color: #313131;
+    padding: 5px 20px;
+}
+
+input:focus {
+    border: 3px solid #555;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -122,4 +134,14 @@ input[type=number] {
 
 .modal-statement {
     font-size: 40px;
+}
+
+#phone-message, #code-message {
+    font-size: 16px;
+    color: red;
+    padding: 10px 0;
+}
+
+.error {
+    border: 3px solid red;
 }
