@@ -12,19 +12,21 @@
         <main>
             <h1>Envelo</h1>
             <p>Możesz mieć swoją przesyłkę w kilkanaście sekund. <br>Rozpocznij klikając w przycisk.</p>
-            <form class="none">
+            <div role="form" class="form none">
                 <div class="inputs">
                     <div>
                         <p><label for="phone">Numer telefonu</label></p>
-                        <input required type="tel" id="phone" name="phone">
+                        <input type="number" id="phone" name="phone">
+                        <p class="phone-message" id="phone-message"></p>
                     </div>
                     <div class="code">
                         <p><label for="code">Kod odbioru</label></p>
-                        <input required type="number" id="code" name="code">
+                        <input type="number" id="code" name="code">
+                        <p class="code-message" id="code-message"></p>
                     </div>
                 </div>
-                <button type="submit" class="submit-button" disabled>Odbierz paczkę</button>
-            </form>
+                <button type="submit" class="submit-button" >Odbierz paczkę</button>
+            </div>
             <button type="button" class="main-button">Odbierz paczkę</button>
         </main>
         <div class="modal none">
