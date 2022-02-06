@@ -4,17 +4,17 @@ const form = document.querySelector(".form");
 const submitBtn = document.querySelector(".submit-button");
 
 mainBtn.addEventListener("click", function (){
-    form.classList.contains('none') && form.classList.remove('none');
-    mainBtn.classList.add('none');
+    form.classList.contains("none") && form.classList.remove("none");
+    mainBtn.classList.add("none");
 });
 
 const endBtn = document.querySelector(".end");
 const packageBtn = document.querySelector(".package");
 
 endBtn.addEventListener("click", function (){
-    form.classList.add('none');
-    modal.classList.add('none');
-    mainBtn.classList.remove('none');
+    form.classList.add("none");
+    modal.classList.add("none");
+    mainBtn.classList.remove("none");
 });
 
 const phone = document.getElementById("phone");
@@ -24,12 +24,12 @@ const phoneMsg = document.querySelector(".phone-message");
 const codeMsg = document.querySelector(".code-message");
 
 packageBtn.addEventListener("click", function (){
-    modal.classList.add('none');
+    modal.classList.add("none");
     phoneMsg.innerHTML = "";
     codeMsg.innerHTML = "";
 });
 
-submitBtn.addEventListener("click", function (){
+function validate() {
     const phoneValue = document.getElementById("phone").value;
     const codeValue = document.getElementById("code").value;
 
@@ -40,6 +40,8 @@ submitBtn.addEventListener("click", function (){
     let codeResult = codeRegExp.test(codeValue);
 
     if (phoneResult == false){
+        submitBtn.classList.remove("loading");
+        submitBtn.innerHTML = "Odbierz paczkę";
         phoneMsg.innerHTML = "Niepoprawna wartość";
         phone.classList.add("error");
     }
@@ -49,6 +51,8 @@ submitBtn.addEventListener("click", function (){
     }
 
     if (codeResult == false){
+        submitBtn.classList.remove("loading");
+        submitBtn.innerHTML = "Odbierz paczkę";
         codeMsg.innerHTML = "Niepoprawna wartość";
         code.classList.add("error");
     }
@@ -58,8 +62,16 @@ submitBtn.addEventListener("click", function (){
     }
 
     if (phoneResult == true && codeResult == true){
-        modal.classList.contains('none') && modal.classList.remove('none');
-        phone.value='';
-        code.value='';
+        modal.classList.contains("none") && modal.classList.remove("none");
+        phone.value="";
+        code.value="";
+        submitBtn.classList.remove("loading");
+        submitBtn.innerHTML = "Odbierz paczkę";
     }
+}
+
+submitBtn.addEventListener("click", function(){
+    submitBtn.classList.add("loading");
+    submitBtn.innerHTML = "";
+    setTimeout(validate, 2000);
 });
